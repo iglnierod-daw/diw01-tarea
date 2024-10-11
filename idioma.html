@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="language-selector">
+      <button id="es-button">Español</button>
+      <button id="pt-button">Português</button>
+    </div>
+
+    <h1
+      id="titulo"
+      data-es="Bienvenido a mi sitio"
+      data-pt="Bem-vindo ao meu site"
+    >
+      Bienvenido a mi sitio
+    </h1>
+    <p
+      id="descripcion"
+      data-es="Esta es una página en español."
+      data-pt="Esta é uma página em português."
+    >
+      Esta es una página en español.
+    </p>
+
+    <script>
+      document.getElementById("es-button").addEventListener("click", () => {
+        cambiarIdioma("es");
+      });
+
+      document.getElementById("pt-button").addEventListener("click", () => {
+        cambiarIdioma("pt");
+      });
+
+      function cambiarIdioma(idioma) {
+        // Cambiar el texto del título
+        document.getElementById("titulo").textContent = document
+          .getElementById("titulo")
+          .getAttribute("data-" + idioma);
+
+        // Cambiar el texto del párrafo
+        document.getElementById("descripcion").textContent = document
+          .getElementById("descripcion")
+          .getAttribute("data-" + idioma);
+      }
+    </script>
+  </body>
+</html>

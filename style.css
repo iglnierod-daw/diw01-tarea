@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+:root {
+  --image-border-radius: 8px;
+  --title-font-size: 36px;
+  --subtitle-font-size: 24px;
+  --text-font-size: 15px;
+  --text-color: #333333;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+a:link,
+a:visited {
+  color: currentColor;
+  text-decoration: none;
+}
+
+html,
+body {
+  height: 90%;
+}
+
+body {
+  font-family: "Roboto";
+  font-size: var(--text-font-size);
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: var(--title-font-size);
+}
+
+h2,
+h3 {
+  font-size: var(--subtitle-font-size);
+}
+
+/* NAV */
+nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  gap: 10px;
+  background-color: #81664a;
+  color: white;
+}
+
+nav a {
+  padding: 1px;
+}
+
+nav a#selected {
+  text-decoration: underline;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* INDEX: MAIN SECTION */
+.index-main {
+  padding: 20px;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 5%;
+}
+
+.info {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.animation {
+  padding: 10px;
+  width: 50%;
+  position: relative;
+  height: 100%;
+}
+
+.image-frame {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.frame1 {
+  background-image: url(assets/bread-animation1.webp);
+  animation: fade 5s infinite;
+  border-radius: var(--image-border-radius);
+}
+
+.frame2 {
+  background-image: url(assets/bread-animation2.webp);
+  animation: fade 5s infinite;
+  animation-delay: 1.67s;
+  border-radius: var(--image-border-radius);
+}
+
+.frame3 {
+  background-image: url(assets/bread-animation3.webp);
+  animation: fade 5s infinite;
+  animation-delay: 3.34s;
+  border-radius: var(--image-border-radius);
+}
+
+@keyframes fade {
+  0%,
+  33% {
+    opacity: 1;
+  }
+  34%,
+  100% {
+    opacity: 0;
+  }
+}
+
+/* PANADERIA */
+.panaderia-main,
+.pasteleria-main,
+.empanadas-main {
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.productos {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  gap: 20px;
+}
+
+.producto * {
+  padding: 2px;
+}
+
+.producto img {
+  border-radius: var(--image-border-radius);
+  width: 400px;
+  height: auto;
+}
+
+/* CONTACTO */
+.main-contact {
+  padding: 10px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.map div {
+  width: 400px;
+  height: 400px;
+}
+
+/* FIXED BTN */
+.fixed-btn {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  background-color: #b49069;
+  color: white;
+  border-radius: 100%;
+  padding: 15px 10px;
+  cursor: pointer;
+  border: none;
+}
+
+.fixed-btn img {
+  width: 30px;
+  height: 20px;
+}
